@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ChartData, ChartEvent, ChartType, Color } from 'chart.js';
 
 @Component({
   selector: 'app-grafica1',
@@ -6,11 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class Grafica1Component implements OnInit {
+export class Grafica1Component {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  public labelsGraf: string[] = [ 'Download Sales', 'In-Store Sales', 'Mail-Order Sales' ];
+  public dataGraf: ChartData<'doughnut', number[], unknown> ={
+    // labels: this.labelsGraf,
+    datasets: [
+      { data: [ 100, 150, 200 ],
+        backgroundColor: [ '#9E120E', '#FF5800', '#FFB414'],
+      },
+    ]
+  };
+  
 }
