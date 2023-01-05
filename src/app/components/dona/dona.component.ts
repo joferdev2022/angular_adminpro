@@ -11,7 +11,7 @@ import { ChartData, ChartEvent, ChartType, Color } from 'chart.js';
 export class DonaComponent {
 
   @Input() title: string = 'sin titulo';
-  @Input() labels: string[] = [];
+  @Input() labels: string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales' ];
   @Input() data1: ChartData<'doughnut', number[], unknown> ={
     labels: this.labels,
     datasets: [
